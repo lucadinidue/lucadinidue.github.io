@@ -4,7 +4,7 @@ collection: teaching
 type: "Masters course"
 permalink: /teaching/computational_linguistics_II
 venue: "University of Pisa, Digital Humanities"
-date: 2023-2024
+# date: 2014-01-01
 location: "Pisa, Italy"
 ---
 
