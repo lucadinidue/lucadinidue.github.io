@@ -11,13 +11,13 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Artificial Intelligence, University of Pisa, Current
+* M.S. in Computer Science (Curriculum Data Science), University of Florence, 2020
+* B.S. in Computer Science, University of Florence, 2016
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
+ Spring 2024: Academic Pages Collaborator
   * Github University
   * Duties includes: Updates and improvements to template
   * Supervisor: The Users
@@ -27,10 +27,12 @@ Work experience
   * Duties included: Merging pull requests
   * Supervisor: Professor Hub
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+### Nov 2017 - July 2019: University tutor
+University of Florence
+  * One-to-one lessons for first-year sutents of Bachelor’s degree in Computer Science
+  * One-to-one computer science lessons for students of Bachelor’s degree in Mathematics
+  * Classroom exercises
+  * Orientation service for future students and participation in various open days
   
 Skills
 ======
