@@ -14,10 +14,12 @@ Education
 ### Nov 2022 - Ongoing: Ph.D in Artificial Intelligence, 
 National Ph.D. in Artificial Intelligence - AI & Society, Pisa
   * Project: Human in Neural Language Models: investigating the use of data on how humans perceive and process textual information for the development of more interpretable and efficient NLMs.
+
 ### July 2020: M.S. in Computer Science (Curriculum Data Science)
 University of Florence, Florence
   * Thesis: Data augmentation techniques for content-based image retrieval using CNNs
   * Grade: 110 cum laude
+  
 ### Dec 2016: B.S. in Computer Science
 University of Florence, Florence
   * Thesis: Progettazione e sviluppo di una libreria Java per il monitoring di segnali
