@@ -1,17 +1,17 @@
 ---
 # Display name
-title: 吳健雄
+title: Luca Dini
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Luca
+last_name: Dini
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: ''
 
 # Is this the primary user of the site?
 superuser: true
@@ -20,69 +20,66 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Third year PhD student in AI
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: ItaliaNLP LAB @ CNR-ILC
+    url: http://www.italianlp.it/people/luca-dini/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:luca.dini@ilc.cnr.it'
     label: E-mail Me
   - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
+    url: https://x.com/lucadini_
+  # - icon: brands/instagram
+  #   url: https://www.instagram.com/
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/lucadinidue
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
+    url: https://www.linkedin.com/in/luca-dini-4570811b3/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
-  - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://scholar.google.it/citations?user=171dUfQAAAAJ&hl=it
+  # - icon: academicons/orcid
+  #   url: https://orcid.org/
 
 interests:
-  - Artificial Intelligence
+  - Natural Language Processing
   - Computational Linguistics
-  - Information Retrieval
+  - Eye-tracking
+  - Curriculum Learning
 
 education:
   - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+    institution: University of Pisa
+    date_start: 2022-11-01
+    date_end: 2025-10-31
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.8/4.0
-
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
+      (Ongoing)
+      Project: Human in Neural Language Models - investigating the use of data on how humans perceive and process textual information for the development of more interpretable and efficient NLMs. Supervised by [Prof. Felice Dell'Orletta](http://www.italianlp.it/people/felice-dellorletta/) and [Prof. Dominique Brunato](http://www.italianlp.it/people/dominique-brunato/).
       
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    # button:
+    #   text: 'Read Thesis'
+    #   url: 'https://example.com'
+  - area: MSc in Computer Science (curriculum Data Science)
+    institution: University of Florence
+    date_start: 2018-01-01
+    date_end: 2020-07-20
+    summary: |
+      Grade: 110 cum Laude
+      Thesis: Data augmentation techniques for content-based image retrieval using CNNs
+      
+  - area: BSc in Computer Science
+    institution: University of Florence
+    date_start: 2017-12-07
+    date_end: 2015-09-01
+    summary: |
+      Grade: 110 cum Laude 
+      Thesis: Progettazione e sviluppo di una libreria Java per il monitoring di segnali
+
 work:
   - position: Director of Cloud Infrastructure
     company_name: GenCoin
@@ -142,12 +139,11 @@ skills:
         icon: camera
 
 languages:
+  - name: Italian
+    percent: Moder Thongue
   - name: English
-    percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+    percent: C1
+
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -183,4 +179,4 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I’m Luca, a third-year PhD student in the Italian National PhD Program in Artificial Intelligence at the University of Pisa. I work with the [ItaliaNLP Lab](http://www.italianlp.it/) at the Institute of Computational Linguistics "Antonio Zampolli" (CNR). My research focuses on enhancing Neural Language Models by integrating human data and advanced learning techniques to make these models more interpretable and data-efficient. Currently, I’m exploring the use of **eye-tracking data** and **curriculum learning** to  improve model performance and usability
