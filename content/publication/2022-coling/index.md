@@ -1,15 +1,14 @@
 ---
+title: '---
 title: 'Trattamento automatico della lingua a supporto dell’editoria: primi esperimenti con il Devoto-Oli Junior'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
+  - Tommaso Caselli
   - admin
   - Felice Dell'Orletta
-  - Fabio Ferri
-  - Biancamaria Gismondi
-  - Simonetta Montemagni
 
 # Author notes (optional)
 # author_notes:
@@ -17,7 +16,7 @@ authors:
 #   - 'Equal contribution'
 
 
-date: '2021-06-09T00:00:00Z'
+date: '2022-10-01T00:00:00Z'
 doi: ''
 
 #doi :'10.4000/books.aaccademia.10599'
@@ -30,16 +29,17 @@ doi: ''
 publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
-publication:  Proceedings of the Eighth Italian Conference on Computational Linguistics
-publication_short: In *Clic-it 2021*
+publication:  Proceedings of the 29th International Conference on Computational Linguistics
+publication_short: In *COLING 2022*
 
-abstract: The paper illustrates the results of a first experiment in which Natural Language Processing was used to support the revision of a children’s dictionary, in particular for what concerns style and wording of definitions and the enrichment of the list of lemmas. The results achieved are promising and demonstrate the potential of a synergy to be strengthened in the publishing sector.
+abstract: This paper presents a comprehensive set of probing experiments using a multilingual language model, XLM-R, for temporal relation classification between events in four languages. Results show an advantage of contextualized embeddings over static ones and a detrimen-tal role of sentence level embeddings. While obtaining competitive results against state-of-the-art systems, our probes indicate a lack of suitable encoded information to properly address this task.
 
 # Summary. An optional shortened abstract.
 #summary: ''.
 
 tags:
-  - Publishing
+  - Probing
+  - Temporal Relations
 
 # Display this page in the Featured widget?
 featured: false
@@ -49,8 +49,8 @@ featured: false
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: 'https://ceur-ws.org/Vol-3033/paper70.pdf'
-url_code: ''
+url_pdf: 'https://aclanthology.org/2022.coling-1.283.pdf'
+url_code: 'https://github.com/lucadinidue/tlink_probing'
 url_dataset: ''
 url_poster: ''
 url_project: ''
@@ -61,7 +61,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'Image credit: [**Mondadori Education**](https://www.mondadorieducation.it/catalogo/devoto-oli-junior-0057009/)'
+  caption: ''
   focal_point: ''
   preview_only: false
 
