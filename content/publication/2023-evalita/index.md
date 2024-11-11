@@ -1,13 +1,17 @@
 ---
-title: 'How about time? probing a multilingual language model for temporal relations'
+title: 'DisCoTex at EVALITA 2023: overview of the assessing discourse coherence in Italian texts task'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Tommaso Caselli
-  - admin
+  - Dominique Brunato
+  - Davide Colla
   - Felice Dell'Orletta
+  - admin
+  - Daniele Paolo Radicioni
+  - Andrea Amelio Ravelli
+
 
 # Author notes (optional)
 # author_notes:
@@ -15,7 +19,7 @@ authors:
 #   - 'Equal contribution'
 
 
-date: '2022-10-01T00:00:00Z'
+date: '2023-09-07T00:00:00Z'
 doi: ''
 
 #doi :'10.4000/books.aaccademia.10599'
@@ -28,31 +32,30 @@ doi: ''
 publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
-publication:  Proceedings of the 29th International Conference on Computational Linguistics
-publication_short: In *COLING 2022*
+publication: 'Eighth Evaluation Campaign of Natural Language Processing and Speech Tools for Italian (EVALITA 2023 shared task)'
+publication_short: In *EVALITA 2023*
 
-abstract: This paper presents a comprehensive set of probing experiments using a multilingual language model, XLM-R, for temporal relation classification between events in four languages. Results show an advantage of contextualized embeddings over static ones and a detrimen-tal role of sentence level embeddings. While obtaining competitive results against state-of-the-art systems, our probes indicate a lack of suitable encoded information to properly address this task.
+abstract: "The Assessing DIScourse COherence in Italian TEXts (DisCoTEX) task is the first shared task focused on modelling discourse coherence for Italian real-word texts, which has been proposed for the first time at EVALITA 2023. Providing two different datasets from different textual genres, we arranged the task into two independent tasks: a more traditional one, aimed at evaluating whether models are able to distinguish well-organized documents from corrupted ones and a less explored one, which assesses the models’ performance on texts evaluated for coherence by human raters. In this paper, we describe the datasets released, we discuss the different approaches tackled by the participating systems and provide a first analysis of the obtained results."
 
 # Summary. An optional shortened abstract.
 #summary: ''.
 
 tags:
-  - Probing
-  - Temporal Relations
+  - Coherence
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: 'https://aclanthology.org/2022.coling-1.283.pdf'
+url_pdf: 'https://ceur-ws.org/Vol-3473/paper49.pdf'
 url_code: 'https://github.com/lucadinidue/tlink_probing'
-url_dataset: ''
+url_dataset: 'https://github.com/davidecolla/DisCoTex'
 url_poster: ''
-url_project: ''
+url_project: 'https://sites.google.com/view/discotex/home'
 url_slides: ''
 url_source: ''
 url_video: ''
