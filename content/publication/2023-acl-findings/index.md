@@ -1,13 +1,15 @@
 ---
-title: 'How about time? probing a multilingual language model for temporal relations'
+title: 'Coherent or not? stressing a neural language model for discourse coherence in multiple languages'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Tommaso Caselli
-  - admin
+  - Dominique Brunato
   - Felice Dell'Orletta
+  - admin
+  - Andrea Amelio Ravelli
+  
 
 # Author notes (optional)
 # author_notes:
@@ -15,7 +17,7 @@ authors:
 #   - 'Equal contribution'
 
 
-date: '2022-10-01T00:00:00Z'
+date: '2023-07-01T00:00:00Z'
 doi: ''
 
 #doi :'10.4000/books.aaccademia.10599'
@@ -28,17 +30,16 @@ doi: ''
 publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
-publication:  Proceedings of the 29th International Conference on Computational Linguistics
-publication_short: In *COLING 2022*
+publication:  'Findings of the Association for Computational: Linguistics ACL 2023'
+publication_short: In *ACL 2023 Findings*
 
-abstract: This paper presents a comprehensive set of probing experiments using a multilingual language model, XLM-R, for temporal relation classification between events in four languages. Results show an advantage of contextualized embeddings over static ones and a detrimen-tal role of sentence level embeddings. While obtaining competitive results against state-of-the-art systems, our probes indicate a lack of suitable encoded information to properly address this task.
+abstract: In this study, we investigate the capability of a Neural Language Model (NLM) to distinguish between coherent and incoherent text, where the latter has been artificially created to gradually undermine local coherence within text. While previous research on coherence assessment using NLMs has primarily focused on English, we extend our investigation to multiple languages. We employ a consistent evaluation framework to compare the performance of monolingual and multilingual models in both in-domain and out-domain settings. Additionally, we explore the model’s performance in a cross-language scenario.
 
 # Summary. An optional shortened abstract.
 #summary: ''.
 
 tags:
-  - Probing
-  - Temporal Relations
+  - Coherence
 
 # Display this page in the Featured widget?
 featured: true
@@ -48,9 +49,9 @@ featured: true
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: 'https://aclanthology.org/2022.coling-1.283.pdf'
-url_code: 'https://github.com/lucadinidue/tlink_probing'
-url_dataset: ''
+url_pdf: 'https://aclanthology.org/2023.findings-acl.680.pdf'
+url_code: ''
+url_dataset: 'https://github.com/lucadinidue/coherence_dataset'
 url_poster: ''
 url_project: ''
 url_slides: ''
