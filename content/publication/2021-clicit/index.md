@@ -16,8 +16,9 @@ authors:
 #   - 'Equal contribution'
 #   - 'Equal contribution'
 
-date: '2022-06-39T00:00:00Z'
-doi: ''
+
+date: '2022-06-09T00:00:00Z'
+doi: '10.4000/books.aaccademia.10599'
 
 # Schedule page publish date (NOT publication's date).
 # publishDate: '2017-01-01T00:00:00Z'
