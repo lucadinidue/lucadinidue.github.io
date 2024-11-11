@@ -53,7 +53,7 @@ interests:
   - Curriculum Learning
 
 education:
-  - area: PhD Artificial Intelligence
+  - area: (Ongoing) PhD Artificial Intelligence
     institution: University of Pisa
     date_start: 2022-11-01
     date_end: 2025-10-31
