@@ -34,7 +34,7 @@ publication_short: In *Clic-it 2021*
 abstract: The paper illustrates the results of a first experiment in which Natural Language Processing was used to support the revision of a children’s dictionary, in particular for what concerns style and wording of definitions and the enrichment of the list of lemmas. The results achieved are promising and demonstrate the potential of a synergy to be strengthened in the publishing sector.
 
 # Summary. An optional shortened abstract.
-summary: ''.
+#summary: ''.
 
 tags:
   - Natural Language Processing
