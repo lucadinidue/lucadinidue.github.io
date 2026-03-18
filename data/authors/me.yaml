@@ -2,115 +2,156 @@ schema: hugoblox/author/v1
 slug: me
 is_owner: true
 name:
-  display: Dr. Alex Johnson
-  given: Alex
-  family: Johnson
+  display: Luca Dini
+  given: Luca
+  family: Dini
   alternate: ''  # Example: 王伟
   pronunciation: ''  # Example: Wáng Wěi
   pronouns: he/him
 postnominals:
   - PhD
-  - MIEEE
 status:
-  icon: "☕️"
-role: Senior AI Research Scientist
+  icon: ""
+role: Research Fellow
 bio: |
-  Alex Johnson is a Senior AI Research Scientist at Meta AI. His research
-  has been published in top conferences like NeurIPS and ICML, with over
-  10,000 citations. Alex is passionate about pushing the boundaries of AI
-  while ensuring ethical development.
+  My research interests lie primarily in the field of Natural Language Processing, with a focus on understanding how training dynamics shape the learned representations of Language Models. 
+  I am particularly interested in curriculum learning and generally in how different data orderings influence model behavior, internal representations, and downstream performance. 
+  Moreover, I am interested in leveraging human data and learning techniques to develop models whose internal mechanisms are more transparent and interpretable.
 
 affiliations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  - name: ItaliaNLP LAB @ CNR ILC
+    url: http://www.italianlp.it/people/luca-dini/
 
 links:
   - icon: at-symbol
-    url: mailto:alex.johnson@example.com
+    url: mailto:luca.dini@ilc.cnr.it
     label: E-mail Me
   - icon: brands/x
-    url: https://x.com/example
+    url: https://x.com/lucadini_
   - icon: brands/github
-    url: https://github.com/example
+    url: https://github.com/lucadinidue/
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/example/
+    url: https://www.linkedin.com/in/luca-dini-4570811b3/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=example
+    url: https://scholar.google.com/citations?user=171dUfQAAAAJ&hl=en
   - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
+    url: https://orcid.org/0009-0004-2070-7238
 
-interests:
-  - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+# interests:
+#   - Natural Language Processing
+#   - Neural Language Models
+#   - Training dynamics
+#   - Interpretability
 
 education:
-  - degree: PhD Computer Science
-    institution: Stanford University
-    start: 2015-09-01
-    end: 2019-06-30
+  - degree: PhD in Artificial Intelligence
+    institution: University of Pisa, CNR-ILC
+    start: 2022-11-01
+    end: 2025-10-31
     summary: |
-      Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
+       Human in Neural Language Models: Interpreting Encoder-Based Language Models with Cognitive Signals and New Evaluation Strategies
+
+       Acquired skills:
+         - Pre‑training and fine‑tuning of NLMs
+         - Integration of physiological data into NLM architectures
+         - Designing and running experiment‑intensive evaluation frameworks
+         - Scientific writing and dissemination in NLP
+         - High‑performance computing (HPC) systems
     button:
-      text: Download dissertation
-      url: /resume.pdf
+      text: Download thesis
+      url: https://etd.adm.unipi.it/theses/available/etd-01282026-142158/unrestricted/tesi_luca_dini.pdf
       icon: hero/arrow-down-tray
-  - degree: MS Computer Science
-    institution: Carnegie Mellon University
-    start: 2013-09-01
-    end: 2015-05-31
-  - degree: BS Computer Science
-    institution: MIT
-    start: 2009-09-01
-    end: 2013-05-31
+  - degree: MSc Computer Science
+    institution: Università degli studi di Firenze (curiculum Data Science)
+    start: 2017-01
+    end: 2020-07
+  - degree: BSc Computer Science
+    institution: Università degli studi di Firenze
+    start: 2014-09
+    end: 2016-12
 
 experience:
-  - role: Senior AI Research Scientist
-    org: Meta AI
-    start: 2020-01-01
+  - role: Research Fellow
+    org: Institute for Computational Linguistics “A. Zampolli” (CNR-ILC)
+    start: 2025-11
+    # summary: |
+    #   Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
+    # button:
+    #   text: View portfolio
+    #   url: /
+    #   icon: hero/arrow-down-tray
+  - role: PhD Student
+    org: University of Pisa, Institute for Computational Linguistics “A. Zampolli” (CNR-ILC)
+    start: 2022-11
+    end: 2025-10
     summary: |
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
+      - PhD Project: Human in Neural Language Models: exploring the use of data on how humans perceive and process textual information for the development of more interpretable NLMs. In particular, investigating how the injection of human reading behaviour into NLMs affects their attention patterns and performance on downstream tasks.
+      - Supervisors: Dr. Felice Dell'Orletta, Dr. Dominique Brunato
     button:
-      text: View portfolio
-      url: /
+      text: Download thesis
+      url: https://etd.adm.unipi.it/theses/available/etd-01282026-142158/unrestricted/tesi_luca_dini.pdf
       icon: hero/arrow-down-tray
-  - role: AI Research Intern
-    org: OpenAI
-    start: 2019-06-01
-    end: 2019-12-31
+  - role: Research Fellow
+    org: Institute for Computational Linguistics “A. Zampolli” (CNR-ILC)
+    start: 2021-02
+    end: 2022-10
     summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
+      Main tasks:
+      - Development of models for NLP tasks (paragraph segmentation; sentence similarity; sentiment analysis)
+      - Development of Neural Language Models (deep networks; Transformers)
+      - Development of classifiers and regressors (e.g., SVM)
+      - Creation of training datasets
+      - Application of NLP techniques to support the publishing industry
+      - API development and distribution
+  - role: Junior Developer
+    org: M.E.T.A. s.r.l.
+    start: 2020-12
+    end: 2021-01
+    summary: |
+      Training of a document classification model, based on SVM
+  - role: Secondary school teacher
+    org: Istituto paritario Cavour-Pacinotti, Firenze
+    start: 2019-10
+    end: 2019-12
+    summary: |
+      Teacher in Computer Science
+  - role: University tutor
+    org: Università degli Studi di Firenze
+    start: 2017-11
+    end: 2019-07
+    summary: |
+      One-to-one lessons for first-year students of Bachelor’s degree in Computer Science; one-to-one computer science lessons for students of Bachelor’s degree in Mathematics;
+      classroom exercises; orientation service for future students and participation in various open days
 
-skills:
-  - name: Technical Skills
-    items:
-      - label: Python
-        level: 5
-      - label: Machine Learning
-        level: 5
-      - label: Cloud Computing
-        level: 4
-  - name: Research & Communication
-    items:
-      - label: Academic Writing
-        level: 5
-      - label: Conference Presentations
-        level: 4
-      - label: Grant Proposals
-        level: 4
+# skills:
+#   - name: Technical Skills
+#     items:
+#       - label: Python
+#         level: 5
+#       - label: Machine Learning
+#         level: 5
+#       - label: Cloud Computing
+#         level: 4
+#   - name: Research & Communication
+#     items:
+#       - label: Academic Writing
+#         level: 5
+#       - label: Conference Presentations
+#         level: 4
+#       - label: Grant Proposals
+#         level: 4
 
-languages:
-  - name: English
-    level: 5
-    label: Native
-  - name: Spanish
-    level: 4
-    label: Fluent
+# languages:
+#   - name: English
+#     level: 5
+#     label: Native
+#   - name: Spanish
+#     level: 4
+#     label: Fluent
 
 awards:
-  - title: Best Paper Award
-    awarder: NeurIPS
-    date: "2022-12-01"
-    summary: Awarded for groundbreaking work on efficient training of large models.
+  - title: Outstanding Paper Award
+    awarder: COLING
+    date: "2022-10"
+    summary: How About Time? Probing a Multilingual Language Model for Temporal Relations” (Caselli T., Dini L., Dell’Orletta F.)
     icon: hero/trophy

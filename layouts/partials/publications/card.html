@@ -1,0 +1,76 @@
+{{ $item := . }}
+{{ $year := $item.Date.Format "2006" }}
+{{ $venue := $item.Params.venue_short | default $item.Params.publication_short | default $item.Params.publication }}
+
+{{ $authors := slice }}
+{{ with $item.Params.authors }}
+  {{ $author_list := . }}
+  {{ if not (reflect.IsSlice $author_list) }}
+    {{ $author_list = slice $author_list }}
+  {{ end }}
+  {{ range $author_list }}
+    {{ $raw := printf "%v" . }}
+    {{ $slug := $raw | urlize }}
+    {{ $profile := partial "functions/get_author_profile" (dict "slug" $slug "title" $raw) }}
+    {{ $display := $profile.title | default $raw }}
+    {{ if $display }}
+      {{ $authors = $authors | append $display }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $tags := slice }}
+{{ with $item.Params.tags }}
+  {{ $tag_list := . }}
+  {{ if not (reflect.IsSlice $tag_list) }}
+    {{ $tag_list = slice $tag_list }}
+  {{ end }}
+  {{ range $tag_list }}
+    {{ $tag := strings.TrimSpace (printf "%v" .) }}
+    {{ if $tag }}
+      {{ $tags = $tags | append $tag }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<article class="publication-card-shell">
+  <a
+    href="{{ $item.RelPermalink }}"
+    aria-label="{{ printf "Open publication: %s" $item.Title }}"
+    class="publication-card group relative block bg-white dark:bg-white/[0.02] backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/[0.06] p-6 hover:bg-gray-50 dark:hover:bg-white/[0.04] hover:border-primary-300 dark:hover:border-primary-500/30 hover:translate-x-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-500/40 transition-all duration-300 shadow-sm dark:shadow-none"
+  >
+    <div class="flex flex-col gap-3">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+        {{ $item.Title }}
+      </h3>
+
+      {{ if gt (len $authors) 0 }}
+        <p class="m-0 text-gray-600 dark:text-gray-400 leading-relaxed">{{ delimit $authors ", " }}</p>
+      {{ end }}
+
+      {{ if or $year $venue }}
+        <p class="m-0 flex flex-wrap items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          {{ if $year }}
+            <span>{{ $year }}</span>
+          {{ end }}
+          {{ if and $year $venue }}
+            <span aria-hidden="true">·</span>
+          {{ end }}
+          {{ if $venue }}
+            <span class="font-medium text-primary-600 dark:text-primary-400">{{ $venue | markdownify }}</span>
+          {{ end }}
+        </p>
+      {{ end }}
+
+      {{ if gt (len $tags) 0 }}
+        <div class="flex flex-wrap gap-2 pt-1" aria-label="Publication topics">
+          {{ range $tags }}
+            <span class="px-2.5 py-1 text-xs font-medium rounded-full bg-primary-100 dark:bg-primary-500/10 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-500/20">
+              {{ . }}
+            </span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </a>
+</article>

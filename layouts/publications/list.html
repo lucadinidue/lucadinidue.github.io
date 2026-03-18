@@ -1,0 +1,75 @@
+{{ define "main" }}
+{{ $pages := .RegularPages.ByDate.Reverse }}
+{{ $journal := slice }}
+{{ $conference := slice }}
+
+{{ range $pages }}
+  {{ $item := . }}
+  {{ $category := "" }}
+
+  {{ with $item.Params.publication_category }}
+    {{ $category = lower (strings.TrimSpace (printf "%v" .)) }}
+  {{ end }}
+
+  {{ if not $category }}
+    {{ $types := $item.Params.publication_types }}
+    {{ if $types }}
+      {{ if not (reflect.IsSlice $types) }}
+        {{ $types = slice $types }}
+      {{ end }}
+      {{ range $types }}
+        {{ $type := lower (strings.TrimSpace (printf "%v" .)) }}
+        {{ if and (not $category) (eq $type "paper-conference") }}
+          {{ $category = "conference" }}
+        {{ end }}
+        {{ if and (not $category) (or (eq $type "article-journal") (strings.HasPrefix $type "article")) }}
+          {{ $category = "journal" }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if eq $category "conference" }}
+    {{ $conference = $conference | append $item }}
+  {{ else }}
+    {{ $journal = $journal | append $item }}
+  {{ end }}
+{{ end }}
+
+<div class="publication-archive">
+  <header class="publication-archive__intro">
+    <h1 class="publication-archive__title">{{ .Title }}</h1>
+    {{ with .Content }}
+      <div class="publication-archive__content prose prose-slate dark:prose-invert max-w-none">
+        {{ . }}
+      </div>
+    {{ end }}
+  </header>
+
+  {{ if gt (len $journal) 0 }}
+    <section class="publication-archive__section" aria-labelledby="journal-articles">
+      <div class="publication-archive__section-header">
+        <h2 id="journal-articles" class="publication-archive__section-title">Journal Articles</h2>
+      </div>
+      <div class="publication-archive__list">
+        {{ range $journal }}
+          {{ partial "publications/card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{ if gt (len $conference) 0 }}
+    <section class="publication-archive__section" aria-labelledby="conference-papers">
+      <div class="publication-archive__section-header">
+        <h2 id="conference-papers" class="publication-archive__section-title">Conference Papers</h2>
+      </div>
+      <div class="publication-archive__list">
+        {{ range $conference }}
+          {{ partial "publications/card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+</div>
+{{ end }}

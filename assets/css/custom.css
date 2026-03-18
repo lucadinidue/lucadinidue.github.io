@@ -1,0 +1,107 @@
+/* rimuove il gradiente sopra lo sfondo */
+/* .absolute.inset-0.-z-10 {
+  display: none !important;
+} */
+
+body {
+  background-image: url('/media/stacked-peaks.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #f8fafc;
+}
+
+.publication-archive {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+.publication-archive__intro {
+  max-width: 52rem;
+  margin: 0 auto 2.5rem;
+}
+
+.publication-archive__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: #f8fafc;
+}
+
+.publication-archive__content {
+  color: rgba(248, 250, 252, 0.78);
+}
+
+.publication-archive__section + .publication-archive__section {
+  margin-top: 2.75rem;
+}
+
+.publication-archive__section-header {
+  max-width: 52rem;
+  margin: 0 auto 1rem;
+}
+
+.publication-archive__section-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.publication-archive__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.publication-card-shell {
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.publication-card {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .publication-archive {
+    padding-inline: 0.85rem;
+  }
+}
+
+
+/* 
+.section {
+  background: none;
+  border-color: rgba(255, 255, 255, 0.10);
+  color: #f8fafc;
+}
+
+.btn {
+  background: linear-gradient(135deg, #0f2e29 0%, #1e3a34 100%);
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.hero, .hero-section, .hero-wrapper, .hero-container {
+  background: none !important;
+  background-image: none !important;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+}
+
+
+.home-section:first-of-type {
+  background: white !important;
+} */
+
+/* Hide the Education section on the landing page (resume-biography-3 block) */
+/* #section-resume-biography-3 .mb-16 {
+  display: none !important;
+} */

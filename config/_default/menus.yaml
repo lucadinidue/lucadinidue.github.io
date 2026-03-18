@@ -5,23 +5,23 @@
 
 main:
   - name: Bio
-    url: /
+    pageRef: /
     weight: 10
   - name: Papers
-    url: /#papers
+    pageRef: /publications
     weight: 11
   - name: Talks
-    url: /#talks
+    pageRef: /events
     weight: 12
   - name: News
-    url: /#news
+    pageRef: /blog
     weight: 13
   - name: Experience
-    url: experience/
+    pageRef: /experience
     weight: 20
   - name: Projects
-    url: projects/
+    pageRef: /projects
     weight: 30
   - name: Courses
-    url: courses/
+    pageRef: /courses
     weight: 40
