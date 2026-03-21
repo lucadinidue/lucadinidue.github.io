@@ -1,0 +1,143 @@
+{{ define "main" }}
+{{ $teaching := .Params.teaching | default dict }}
+{{ $courses := index $teaching "courses" | default (slice) }}
+{{ $theses := index $teaching "theses" | default (slice) }}
+{{ $talks := sort (where site.RegularPages "Section" "events") "Params.event_start" "desc" }}
+{{ $otherProjects := .Params.other_projects | default (slice) }}
+
+<div class="activities-page">
+  <header class="activities-page__intro">
+    <h1 class="activities-page__title">{{ .Title }}</h1>
+    {{ with .Content }}
+      <div class="activities-page__content prose prose-slate dark:prose-invert max-w-none">
+        {{ . }}
+      </div>
+    {{ end }}
+  </header>
+
+  <section class="activities-section" aria-labelledby="teaching">
+    <div class="activities-section__header">
+      <h2 id="teaching" class="activities-section__title">Teaching Assistant</h2>
+    </div>
+
+    <div class="activities-stack">
+      {{ range $courses }}
+        <article class="activities-card activities-card--primary">
+          <div class="activities-card__body">
+            <h3 class="activities-card__title">
+              {{ if .course_url }}
+                <a href="{{ .course_url }}" class="activities-card__link" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+              {{ else }}
+                {{ .title }}
+              {{ end }}
+            </h3>
+            <p class="activities-card__meta">
+              <span>{{ .program }}</span>
+              {{ if and .program .institution }}<span aria-hidden="true">·</span>{{ end }}
+              <span>{{ .institution }}</span>
+            </p>
+            {{ with .description }}
+              <p class="activities-card__description">{{ . }}</p>
+            {{ end }}
+            {{ with .course_url }}
+              <div class="activities-card__actions">
+                <a href="{{ . }}" class="activities-inline-link" target="_blank" rel="noopener noreferrer">Course page</a>
+              </div>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+
+    <div class="activities-subsection">
+      <h3 class="activities-subsection__title">Co-supervised Theses</h3>
+      <div class="activities-compact-list">
+        {{ range $theses }}
+          <article class="activities-compact-card">
+            <p class="activities-compact-card__title">{{ .title }}</p>
+            <p class="activities-compact-card__meta">
+              <span>{{ .student }}</span>
+              {{ with .degree_program }}
+                <span aria-hidden="true">·</span>
+                <span>{{ . }}</span>
+              {{ end }}
+            </p>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="activities-section" aria-labelledby="talks-and-seminars">
+    <div class="activities-section__header">
+      <h2 id="talks-and-seminars" class="activities-section__title">Talks and Seminars</h2>
+    </div>
+
+    <div class="activities-stack">
+      {{ range $talks }}
+        {{ $date := .Params.event_start | default .Date }}
+        {{ $event := .Params.event_name | default "Talk" }}
+        <article class="activities-card">
+          <div class="activities-card__body">
+            <div class="activities-card__eyebrow">{{ $event }}</div>
+            <h3 class="activities-card__title">
+              <a href="{{ .RelPermalink }}" class="activities-card__link">{{ .Title }}</a>
+            </h3>
+            <p class="activities-card__meta">
+              {{ if $date }}
+                <span>{{ (time $date) | time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") }}</span>
+              {{ end }}
+              {{ with .Params.location }}
+                {{ if $date }}<span aria-hidden="true">·</span>{{ end }}
+                <span>{{ . }}</span>
+              {{ end }}
+            </p>
+            {{ with .Summary }}
+              <p class="activities-card__description">{{ . | plainify }}</p>
+            {{ end }}
+            <div class="activities-card__actions">
+              <a href="{{ .RelPermalink }}" class="activities-inline-link">View details</a>
+              {{ with .Params.event_url }}
+                <a href="{{ . }}" class="activities-inline-link" target="_blank" rel="noopener noreferrer">Event page</a>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="activities-section" aria-labelledby="other-projects">
+    <div class="activities-section__header">
+      <h2 id="other-projects" class="activities-section__title">Other Projects</h2>
+    </div>
+
+    <div class="activities-stack">
+      {{ range $otherProjects }}
+        {{ $project := . }}
+        <article class="activities-card">
+          <div class="activities-card__body">
+            <h3 class="activities-card__title">
+              {{ if $project.link }}
+                <a href="{{ $project.link }}" class="activities-card__link" target="_blank" rel="noopener noreferrer">{{ $project.title }}</a>
+              {{ else }}
+                {{ $project.title }}
+              {{ end }}
+            </h3>
+            {{ with $project.description }}
+              <p class="activities-card__description">{{ . }}</p>
+            {{ end }}
+            {{ with $project.link }}
+              <div class="activities-card__actions">
+                <a href="{{ . }}" class="activities-inline-link" {{ if ne . "#" }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                  {{ $project.link_label | default "Project Page" }}
+                </a>
+              </div>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+</div>
+{{ end }}
