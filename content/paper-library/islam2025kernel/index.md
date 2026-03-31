@@ -18,9 +18,7 @@ pdf: ""
 code: ""
 
 tags:
-  - "similarity-metrics"
-  - "embedding-space"
-  - "representation-evolution"
+  - "embedding-similarity"
 
 keywords:
   - "manifold approximation"
@@ -48,9 +46,7 @@ related_topics:
 
 personal_note: "Potentially useful as a methodological reference when CKA seems too sensitive to geometry or hyperparameters."
 ---
-
 - Main claim: Standard CKA can miss or distort manifold-level similarity, while MKA better captures topology-preserving relationships and is more robust to some hyperparameter choices.
 - Method: Define a sparse manifold-approximated kernel using a UMAP-style k-nearest-neighbor construction, then compute a normalized alignment score with row-centered kernels; compare against RBF-CKA variants and a sparsified t-CKA baseline.
 - Useful for: Studying representation geometry, evaluating similarity metrics beyond linear/global kernels, and analyzing neural network hidden representations when local neighborhood structure matters.
 - Limits / caveats: The paper is a workshop paper; the proposed kernel is non-symmetric and non-Mercer; evaluation is mostly synthetic plus a ResNet-50 case study; bibliographic metadata such as DOI, arXiv ID, and code link are not recoverable from the provided PDF alone.
-

@@ -19,8 +19,7 @@ pdf: https://openreview.net/pdf?id=jiCLUPq5xv""
 code: "https://github.com/rjha18/vec2vec"
 
 tags:
-  - embedding-space
-  - similarity-metrics
+  - "embedding-similairty"
 
 keywords:
   - unsupervised embedding translation
@@ -49,11 +48,11 @@ related_topics:
 
 personal_note: "Important for thinking about universal structure in embeddings and implications for representation comparability and privacy."
 ---
-
 - Main claim:
-  - Embedding spaces from different models share a universal latent geometry that can be learned and used to translate representations without any paired data. :contentReference[oaicite:0]{index=0}
 
+  - Embedding spaces from different models share a universal latent geometry that can be learned and used to translate representations without any paired data. :contentReference[oaicite:0]{index=0}
 - Method:
+
   - Introduces **vec2vec**, a modular architecture with:
     - Input adapters → shared latent space → output adapters
     - A shared backbone network enforcing a universal representation
@@ -63,15 +62,15 @@ personal_note: "Important for thinking about universal structure in embeddings a
     - Reconstruction loss
     - Vector Space Preservation (pairwise geometry preservation)
   - Fully unsupervised: no aligned pairs, no access to original encoder
-
 - Useful for:
+
   - Studying **representation geometry across models**
   - Cross-model embedding compatibility
   - Understanding whether embeddings encode **model-invariant semantics**
   - Security/privacy analysis (embedding leakage and inversion)
   - Bridging modalities (e.g., text ↔ CLIP embeddings)
-
 - Limits / caveats:
+
   - Training relies on GAN-style objectives → instability and tuning required
   - Requires large amounts of embedding data for strong performance
   - Assumes similar modality and task distribution (e.g., text, same language)

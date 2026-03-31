@@ -7,9 +7,8 @@
 # ============================================================================
 
 docs/
-.codex/
-.node-version/
-.nvmrc/
+.node-version
+.nvmrc
 LOCAL_DEVELOPMENT.md
 # Generated site output
 public/

@@ -19,8 +19,7 @@ pdf: "https://openreview.net/pdf?id=NE2xXWo0LF"
 code: "https://github.com/michahu/modeling-training"
 
 tags:
-  - representation-evolution
-  - hidden-states
+  - learning-dynamics
 
 keywords:
   - training dynamics

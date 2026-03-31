@@ -18,8 +18,7 @@ pdf: "https://openreview.net/pdf?id=oUOg50iFL1"
 code: ""
 
 tags:
-  - "hidden-states"
-  - "representation-evolution"
+  - "learning-dynamics"
 
 keywords:
   - "training-order recency"
@@ -41,8 +40,6 @@ related_topics:
 
 personal_note: "Potentially useful as a probing-focused reference on non-semantic structure encoded in LLM activations."
 ---
-
-
 - Main claim: LLM hidden activations contain a linear signal that tracks training-order recency, allowing early versus late learned entities to be separated and ordered across multiple fine-tuning stages.
 - Method: Sequentially fine-tune models on disjoint entity datasets, cache post-residual activations, and train logistic-regression probes on layer/token representations; also test persistence under mixed training, LoRA variants, and controls balancing activation/logit statistics.
 - Useful for: Hidden-state probing, representation geometry under fine-tuning, temporal organization of learned knowledge, and interpretability questions related to knowledge editing or conflicting evidence.

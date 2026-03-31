@@ -19,7 +19,6 @@ pdf: "https://aclanthology.org/2025.acl-long.1584.pdf"
 code: "https://github.com/shimo-lab/modelmap"
 
 tags:
-  - "similarity-metrics"
   - "model-similarity"
 
 keywords:
@@ -50,7 +49,6 @@ related_topics:
 
 personal_note: "Useful as a model-level geometry paper with a clear metric interpretation, even though it is not about hidden-state similarity directly."
 ---
-
 - Main claim: A language model can be represented by its log-likelihood vector over a shared corpus, and squared Euclidean distance between centered vectors approximates KL divergence between models.
 - Method: Compute log-likelihoods on 10,000 text chunks, apply row-wise and column-wise centering to obtain model coordinates, then use these coordinates for visualization, nearest-neighbor analysis, and regression on benchmark scores.
 - Useful for: Comparing many LLMs without pairwise generation, defining interpretable model-level similarity, and relating geometric position to benchmark behavior and data leakage.

@@ -19,9 +19,8 @@ pdf: "https://proceedings.neurips.cc/paper_files/paper/2017/file/dc6a7e655d7e584
 code: ""
 
 tags:
-  - "similarity-metrics"
-  - "embedding-space"
-  - "representation-evolution"
+  - "embedding-similarity"
+  - "learning-dynamics"
 
 keywords:
   - "CCA"
@@ -48,21 +47,20 @@ related_topics:
   - "model compression"
 
 personal_note: "Core method for comparing representations; important baseline before CKA."
-
 ---
-
 - Main claim:
+
   - Neural network representations can be meaningfully compared using subspace alignment rather than neuron-wise correspondence.
   - SVCCA reveals that learned representations are low-dimensional and converge bottom-up during training.
-
 - Method:
+
   - Represent each neuron as its activation vector over a dataset.
   - Treat layers as subspaces spanned by these vectors.
   - Step 1: Apply SVD to retain top directions explaining ~99% variance.
   - Step 2: Apply CCA to align the two subspaces and compute correlations.
   - Output: aligned directions and correlation coefficients measuring similarity.
-
 - Useful for:
+
   - Comparing representations across:
     - different layers
     - different training steps
@@ -70,8 +68,8 @@ personal_note: "Core method for comparing representations; important baseline be
   - Studying learning dynamics (e.g., bottom-up convergence)
   - Identifying intrinsic dimensionality and redundancy
   - Model compression via projection onto top SVCCA directions
-
 - Limits / caveats:
+
   - Linear method: only captures linear relationships between representations
   - Requires dataset-dependent activations (not input-independent)
   - Computational cost can be high for large conv layers (mitigated via DFT trick)

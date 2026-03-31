@@ -20,9 +20,8 @@ pdf: "https://arxiv.org/pdf/2505.15353"
 code: ""
 
 tags:
-  - distance-metrics
-  - similarity-metrics
-  - representation-evolution
+  - "model-similarity"
+  - "learning-dynamics"
 
 keywords:
   - KL divergence
@@ -50,12 +49,12 @@ related_topics:
 
 personal_note: "More mature version of the earlier trajectory paper; the notion of a calibrated KL scale could be useful for comparing curriculum-induced trajectories."
 ---
-
 - Main claim:
+
   - KL divergence between language models can be placed on a **consistent, interpretable scale** across many settings (training, size, fine-tuning, etc.).
   - Model evolution is **highly constrained in output (log-likelihood) space**, even when weights continue to change.
-
 - Method:
+
   - Represent models via **log-likelihood vectors** over a fixed dataset.
   - Embed models in a shared Euclidean space where distance ≈ KL divergence.
   - Extend analysis to:
@@ -66,14 +65,14 @@ personal_note: "More mature version of the earlier trajectory paper; the notion 
     - Fine-tuning
     - Layers
   - Analyze trajectories and diffusion behavior in this space.
-
 - Useful for:
+
   - Giving **absolute meaning to KL distances** between models
   - Comparing heterogeneous models (architectures, sizes, training stages)
   - Studying **representation evolution vs weight evolution**
   - Understanding when training actually “stabilizes” behaviorally
-
 - Limits / caveats:
+
   - KL values depend on the chosen reference dataset
   - Still relies on approximation via log-likelihood vectors
   - Interpretation of the “scale” may not transfer across domains
