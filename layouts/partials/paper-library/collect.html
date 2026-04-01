@@ -1,6 +1,6 @@
 {{ $pages := where site.RegularPages "Section" "paper-library" }}
 {{ $pages = where $pages "Params.layout" "ne" "statistics" }}
-{{ $paperLibraryData := index hugo.Data "paper-library" | default dict }}
+{{ $paperLibraryData := index site.Data "paper-library" | default dict }}
 {{ $citationPaperIndex := index $paperLibraryData "paper_index" | default dict }}
 {{ $citationEdgesData := index $paperLibraryData "citation_edges" | default (slice) }}
 {{ $citationMatchesData := index $paperLibraryData "citation_matches" | default (slice) }}
