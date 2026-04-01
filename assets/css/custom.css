@@ -446,8 +446,7 @@ body {
 .paper-panel,
 .paper-library-filters,
 .paper-library-card,
-.paper-related-card,
-.paper-bridge-card {
+.paper-related-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1rem;
@@ -558,7 +557,6 @@ body {
 .paper-library-results__hint,
 .paper-panel__header p,
 .paper-graph-detail p,
-.paper-bridge-card__meta,
 .paper-single__authors,
 .paper-single__meta,
 .paper-library-card__authors,
@@ -576,6 +574,9 @@ body {
 
 .paper-library-card {
   padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 .paper-library-card__meta-row,
@@ -592,16 +593,16 @@ body {
 }
 
 .paper-library-card__title,
-.paper-related-card h3,
-.paper-bridge-card h4 {
-  margin: 0.55rem 0 0;
-  font-size: 1.3rem;
-  line-height: 1.2;
+.paper-related-card h3 {
+  margin: 0;
+  font-size: 1.52rem;
+  line-height: 1.16;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .paper-library-card__title a,
 .paper-related-card a,
-.paper-bridge-card a,
 .paper-single__back a,
 .paper-single__authors a,
 .paper-library-card__authors a,
@@ -612,7 +613,6 @@ body {
 
 .paper-library-card__title a:hover,
 .paper-related-card a:hover,
-.paper-bridge-card a:hover,
 .paper-single__back a:hover,
 .paper-single__authors a:hover,
 .paper-library-card__authors a:hover,
@@ -622,7 +622,6 @@ body {
 
 .paper-library-card__summary,
 .paper-related-card p,
-.paper-bridge-card p,
 .paper-single__section p,
 .paper-side-card p,
 .paper-meta-list dd,
@@ -676,8 +675,64 @@ body {
   text-decoration: none;
 }
 
+.paper-tag {
+  text-transform: none;
+}
+
+.paper-tag--embedding-space-geometry {
+  background: rgba(110, 191, 255, 0.16);
+  color: #b9e5ff;
+  border-color: rgba(110, 191, 255, 0.26);
+}
+
+.paper-tag--embedding-similarity {
+  background: rgba(79, 255, 177, 0.14);
+  color: #baffdd;
+  border-color: rgba(79, 255, 177, 0.24);
+}
+
+.paper-tag--model-similarity {
+  background: rgba(255, 209, 102, 0.16);
+  color: #ffe7a8;
+  border-color: rgba(255, 209, 102, 0.24);
+}
+
+.paper-tag--learning-dynamics {
+  background: rgba(255, 145, 180, 0.16);
+  color: #ffd0df;
+  border-color: rgba(255, 145, 180, 0.24);
+}
+
 .paper-library-card__actions {
   margin-top: 1rem;
+}
+
+.paper-library-card__authors {
+  margin: -0.1rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.paper-library-card__meta-row {
+  gap: 0.45rem;
+  order: 2;
+}
+
+.paper-library-card__summary {
+  margin: 0;
+  padding-top: 0.2rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(248, 250, 252, 0.88);
+}
+
+.paper-library-card__details {
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.paper-library-card__note {
+  color: rgba(248, 250, 252, 0.58);
 }
 
 .paper-library-card__primary,

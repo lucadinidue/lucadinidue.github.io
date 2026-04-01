@@ -50,6 +50,10 @@
   data-sort-author="{{ lower $authorFilter }}"
 >
   <div class="paper-library-card">
+    <h3 class="paper-library-card__title">
+      <a href="{{ $paper.RelPermalink }}">{{ $paper.Title }}</a>
+    </h3>
+
     <div class="paper-library-card__meta-row">
       <span class="paper-status paper-status--{{ $status | urlize }}">{{ $status }}</span>
       <span class="paper-library-card__year">{{ $year }}</span>
@@ -57,10 +61,6 @@
         <span class="paper-library-card__venue">{{ $venue }}</span>
       {{ end }}
     </div>
-
-    <h3 class="paper-library-card__title">
-      <a href="{{ $paper.RelPermalink }}">{{ $paper.Title }}</a>
-    </h3>
 
     {{ if gt (len $authors) 0 }}
       <p class="paper-library-card__authors">
@@ -92,7 +92,7 @@
       <div class="paper-library-card__tags" aria-label="Paper tags">
         {{ $libraryPage := site.GetPage "/paper-library" }}
         {{ range $tags }}
-          <a class="paper-tag" href="{{ $libraryPage.RelPermalink }}?tag={{ . | urlquery }}">{{ . }}</a>
+          <a class="paper-tag paper-tag--{{ . | urlize }}" href="{{ $libraryPage.RelPermalink }}?tag={{ . | urlquery }}">{{ . }}</a>
         {{ end }}
       </div>
     {{ end }}
@@ -108,4 +108,3 @@
     </div>
   </div>
 </article>
-

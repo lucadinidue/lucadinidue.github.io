@@ -19,7 +19,8 @@ pdf: https://openreview.net/pdf?id=jiCLUPq5xv""
 code: "https://github.com/rjha18/vec2vec"
 
 tags:
-  - "embedding-similairty"
+  - "embedding-space-geometry"
+  - "embedding-similarity"
 
 keywords:
   - unsupervised embedding translation

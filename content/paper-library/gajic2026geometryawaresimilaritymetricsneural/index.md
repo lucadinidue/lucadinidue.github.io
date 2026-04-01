@@ -17,6 +17,7 @@ pdf: "https://arxiv.org/pdf/2603.28764"
 code: ""
 
 tags:
+  - "embedding-space-geometry"
   - "embedding-similarity"
 
 keywords:

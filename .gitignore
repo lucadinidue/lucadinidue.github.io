@@ -10,6 +10,7 @@ docs/
 .node-version
 .nvmrc
 LOCAL_DEVELOPMENT.md
+.codex
 # Generated site output
 public/
 
