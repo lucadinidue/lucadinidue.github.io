@@ -18,6 +18,11 @@
       const data = await response.json();
       if (window.PaperLibraryGraph) {
         window.PaperLibraryGraph.render(
+          app.querySelector("[data-paper-citation-graph]"),
+          app.querySelector("[data-paper-citation-graph-detail]"),
+          data,
+        );
+        window.PaperLibraryGraph.render(
           app.querySelector("[data-paper-graph]"),
           app.querySelector("[data-paper-graph-detail]"),
           data,

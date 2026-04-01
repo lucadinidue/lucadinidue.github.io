@@ -1,5 +1,11 @@
 {{ $pages := where site.RegularPages "Section" "paper-library" }}
 {{ $pages = where $pages "Params.layout" "ne" "statistics" }}
+{{ $paperLibraryData := index hugo.Data "paper-library" | default dict }}
+{{ $citationPaperIndex := index $paperLibraryData "paper_index" | default dict }}
+{{ $citationEdgesData := index $paperLibraryData "citation_edges" | default (slice) }}
+{{ $citationMatchesData := index $paperLibraryData "citation_matches" | default (slice) }}
+{{ $citationUnresolvedData := index $paperLibraryData "citation_unresolved" | default (slice) }}
+{{ $citationSummary := index $paperLibraryData "citation_summary" | default dict }}
 {{ $papers := slice }}
 {{ $tagCounts := dict }}
 {{ $yearCounts := dict }}
@@ -159,4 +165,16 @@
   "yearSeries" $yearSeries
   "tagSeries" $tagSeries
   "statusSeries" $statusSeries
+  "citationGraph" (dict
+    "generatedAt" ($citationSummary.generated_at | default "")
+    "nodes" ($citationPaperIndex.papers | default (slice))
+    "edges" $citationEdgesData
+    "matchCount" (len $citationMatchesData)
+    "resolvedCount" ($citationSummary.resolved_count | default 0)
+    "ambiguousCount" ($citationSummary.ambiguous_count | default 0)
+    "unresolvedCount" ($citationSummary.unresolved_count | default 0)
+    "papersMissingCitationsFile" ($citationSummary.papers_missing_citations_file | default (slice))
+    "invalidCitationsFiles" ($citationSummary.invalid_citations_files | default (slice))
+    "reviewCount" (len $citationUnresolvedData)
+  )
 }}

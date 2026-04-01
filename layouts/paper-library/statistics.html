@@ -49,7 +49,20 @@
 
   <section class="paper-statistics-page__graph" aria-labelledby="paper-statistics-graph-title">
     <div class="paper-library-visuals__header">
-      <h2 id="paper-statistics-graph-title" class="paper-library-section-title">Author graph</h2>
+      <h2 id="paper-statistics-graph-title" class="paper-library-section-title">Citation Graph</h2>
+      <p class="paper-library-results__hint">Directed citation links between papers in the library.</p>
+    </div>
+    <div class="paper-panel paper-panel--graph paper-panel--citation-graph">
+      <div class="paper-graph paper-graph--expanded" data-paper-citation-graph data-graph-kind="citation" data-graph-size="expanded"></div>
+      <div class="paper-graph-detail paper-graph-detail--expanded" data-paper-citation-graph-detail data-graph-kind="citation">
+        <p>Select a paper or citation link to inspect local connections.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper-statistics-page__graph" aria-labelledby="paper-statistics-author-graph-title">
+    <div class="paper-library-visuals__header">
+      <h2 id="paper-statistics-author-graph-title" class="paper-library-section-title">Author Graph</h2>
       <p class="paper-library-results__hint">Nodes are authors, edges connect co-authors across the papers currently stored in the library.</p>
     </div>
     <div class="paper-panel paper-panel--graph">
