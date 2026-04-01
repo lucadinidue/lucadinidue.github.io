@@ -13,6 +13,7 @@
   },
   "description": "Academic CV starter template for Hugo Blox with Tailwind CSS v4",
   "scripts": {
+    "paper-library:citations": "python3 scripts/generate_paper_library_citations.py",
     "dev": "hugo server --disableFastRender",
     "build": "hugo --minify && pnpm run pagefind",
     "pagefind": "pagefind --site public"

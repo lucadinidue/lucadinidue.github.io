@@ -790,13 +790,13 @@ body {
 }
 
 .paper-graph__edge {
-  stroke: rgba(122, 255, 194, 0.28);
+  stroke: rgba(140, 181, 200, 0.32);
   cursor: pointer;
-  transition: opacity 0.2s ease, stroke 0.2s ease;
+  transition: opacity 0.2s ease, stroke 0.2s ease, stroke-width 0.2s ease;
 }
 
 .paper-graph__edge.is-active {
-  stroke: rgba(122, 255, 194, 0.9);
+  stroke: rgba(189, 219, 230, 0.92);
 }
 
 .paper-graph__edge.is-muted {
@@ -809,14 +809,14 @@ body {
 }
 
 .paper-graph__node-circle {
-  fill: rgba(5, 12, 18, 0.9);
-  stroke: rgba(122, 255, 194, 0.55);
+  fill: rgba(64, 88, 117, 0.9);
+  stroke: rgba(202, 214, 225, 0.8);
   stroke-width: 2;
 }
 
 .paper-graph__node.is-active .paper-graph__node-circle {
-  fill: rgba(122, 255, 194, 0.16);
-  stroke: #7affc2;
+  fill: rgba(132, 164, 187, 0.34);
+  stroke: #f2f7fb;
 }
 
 .paper-graph__node.is-muted {
@@ -826,6 +826,11 @@ body {
 .paper-graph__label {
   fill: #f8fafc;
   font-size: 0.76rem;
+}
+
+.paper-graph__empty {
+  margin: 0;
+  color: rgba(248, 250, 252, 0.72);
 }
 
 .paper-graph-detail {
@@ -955,6 +960,57 @@ body {
   color: rgba(122, 255, 194, 0.9);
 }
 
+.paper-stat-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.paper-stat-list__item {
+  padding: 0.85rem 0.95rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.paper-stat-list__item h4 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.paper-stat-list__item h4 a,
+.paper-related-mini-list__item a {
+  color: #f8fafc;
+  text-decoration: none;
+}
+
+.paper-stat-list__item h4 a:hover,
+.paper-related-mini-list__item a:hover {
+  color: #7affc2;
+}
+
+.paper-stat-list__item p,
+.paper-stat-list__empty,
+.paper-related-mini-list__item p {
+  margin: 0.35rem 0 0;
+  color: rgba(248, 250, 252, 0.66);
+}
+
+.paper-related-mini-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.paper-related-mini-list__item {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.paper-related-mini-list__item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
 @media (max-width: 900px) {
   .paper-single__grid {
     grid-template-columns: 1fr;
@@ -963,6 +1019,7 @@ body {
   .paper-graph--expanded {
     min-height: 31rem;
   }
+
 }
 
 @media (max-width: 640px) {

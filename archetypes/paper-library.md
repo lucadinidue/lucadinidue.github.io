@@ -9,11 +9,15 @@ authors:
 year: {{ .Date.Format "2006" }}
 venue: ""
 publication_type: "preprint"
+canonical_id: ""
 arxiv: ""
 doi: ""
 source_url: ""
 pdf: ""
 code: ""
+
+references_raw: []
+references_resolved: []
 
 tags:
   - ""

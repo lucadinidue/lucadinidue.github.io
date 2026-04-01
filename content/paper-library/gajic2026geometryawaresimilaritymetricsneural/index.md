@@ -15,6 +15,7 @@ doi: ""
 source_url: ""
 pdf: "https://arxiv.org/pdf/2603.28764"
 code: ""
+explicit canonical_id: arxiv:2603.28764
 
 tags:
   - "embedding-space-geometry"

@@ -17,6 +17,7 @@ arxiv: "2505.15353"
 doi: "10.48550/arXiv.2505.15353"
 source_url: "https://arxiv.org/abs/2505.15353"
 pdf: "https://arxiv.org/pdf/2505.15353"
+canonical_id: "doi:10.48550/arxiv.2505.15353"
 code: ""
 
 tags:

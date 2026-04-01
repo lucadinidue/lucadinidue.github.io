@@ -78,6 +78,7 @@
     "title" $page.Title
     "slug" $page.File.ContentBaseName
     "url" $page.RelPermalink
+    "canonicalId" ($page.Params.canonical_id | default "")
     "year" $year
     "venue" $venue
     "publicationType" ($page.Params.publication_type | default "")
@@ -96,6 +97,8 @@
     "sourceUrl" ($page.Params.source_url | default "")
     "pdf" ($page.Params.pdf | default "")
     "code" ($page.Params.code | default "")
+    "referencesRawCount" (len ($page.Params.references_raw | default (slice)))
+    "referencesResolvedCount" (len ($page.Params.references_resolved | default (slice)))
   }}
   {{ $papers = $papers | append $paper }}
 {{ end }}

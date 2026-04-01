@@ -101,6 +101,7 @@
           {{ end }}
         </div>
       </section>
+
     </div>
   </section>
 </div>
@@ -108,4 +109,3 @@
 <script defer src="{{ $graphScript.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $graphScript.Data.Integrity }}" crossorigin="anonymous"{{ end }}></script>
 <script defer src="{{ $statsScript.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $statsScript.Data.Integrity }}" crossorigin="anonymous"{{ end }}></script>
 {{ end }}
-

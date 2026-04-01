@@ -2,6 +2,7 @@
 {{ $libraryPage := site.GetPage "/paper-library" }}
 {{ $related := slice }}
 {{ $allPapers := where site.RegularPages "Section" "paper-library" }}
+{{ $allPapers = where $allPapers "Params.layout" "ne" "statistics" }}
 
 {{ range $allPapers }}
   {{ if ne .RelPermalink $.RelPermalink }}
