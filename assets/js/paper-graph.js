@@ -20,6 +20,17 @@
       centerStrengthCompact: 0.0022,
       collisionPaddingExpanded: 14,
       collisionPaddingCompact: 10,
+      linkForceExpanded: 1,
+      linkForceCompact: 1,
+      collisionForceExpanded: 1,
+      collisionForceCompact: 1,
+      chargeForceExpanded: 1,
+      chargeForceCompact: 1,
+      velocityDecay: 0.78,
+      alphaDecay: 0.032,
+      dragAlphaStart: 0.22,
+      dragAlphaMove: 0.18,
+      dragAlphaRelease: 0.15,
       linkDistanceExpanded(link) {
         return 82 + (6 - Math.min(link.weight, 5)) * 19;
       },
@@ -158,15 +169,26 @@
       detailEmptyListMessage: "No citation metadata available.",
       chargeStrengthExpanded: 2050,
       chargeStrengthCompact: 1250,
-      centerStrengthExpanded: 0.0017,
-      centerStrengthCompact: 0.0024,
-      collisionPaddingExpanded: 18,
-      collisionPaddingCompact: 12,
+      centerStrengthExpanded: 0.001,
+      centerStrengthCompact: 0.00135,
+      collisionPaddingExpanded: 24,
+      collisionPaddingCompact: 18,
+      linkForceExpanded: 0.62,
+      linkForceCompact: 0.58,
+      collisionForceExpanded: 1.18,
+      collisionForceCompact: 1.12,
+      chargeForceExpanded: 1.16,
+      chargeForceCompact: 1.1,
+      velocityDecay: 0.86,
+      alphaDecay: 0.026,
+      dragAlphaStart: 0.16,
+      dragAlphaMove: 0.12,
+      dragAlphaRelease: 0.08,
       linkDistanceExpanded(link) {
-        return 130 - Math.min(link.weight, 3) * 10;
+        return 174 - Math.min(link.weight, 3) * 8;
       },
       linkDistanceCompact(link) {
-        return 108 - Math.min(link.weight, 3) * 8;
+        return 142 - Math.min(link.weight, 3) * 7;
       },
       buildGraph(data, size) {
         const citationData = data?.citationGraph;
@@ -724,6 +746,7 @@
 
   function bindDrag(state, node) {
     const { svg } = state.scene;
+    const { variant } = state;
     let pointerId = null;
 
     node.element.addEventListener("pointerdown", (event) => {
@@ -735,7 +758,7 @@
       node.fy = point.y;
       node.vx = 0;
       node.vy = 0;
-      kickSimulation(state, 0.22);
+      kickSimulation(state, variant.dragAlphaStart ?? 0.22);
     });
 
     node.element.addEventListener("pointermove", (event) => {
@@ -745,7 +768,7 @@
       const point = projectPointer(svg, event);
       node.fx = point.x;
       node.fy = point.y;
-      kickSimulation(state, 0.18);
+      kickSimulation(state, variant.dragAlphaMove ?? 0.18);
     });
 
     const release = (event) => {
@@ -756,7 +779,7 @@
       node.element.releasePointerCapture(event.pointerId);
       node.fx = null;
       node.fy = null;
-      kickSimulation(state, 0.15);
+      kickSimulation(state, variant.dragAlphaRelease ?? 0.15);
     };
 
     node.element.addEventListener("pointerup", release);
@@ -768,8 +791,8 @@
       state.simulation = {
         alpha: 1,
         alphaMin: 0.018,
-        alphaDecay: 0.032,
-        velocityDecay: 0.78,
+        alphaDecay: state.variant.alphaDecay ?? 0.032,
+        velocityDecay: state.variant.velocityDecay ?? 0.78,
       };
     }
 
@@ -809,6 +832,9 @@
     const chargeStrength = state.expanded ? variant.chargeStrengthExpanded : variant.chargeStrengthCompact;
     const centerStrength = state.expanded ? variant.centerStrengthExpanded : variant.centerStrengthCompact;
     const collisionPadding = state.expanded ? variant.collisionPaddingExpanded : variant.collisionPaddingCompact;
+    const linkForceMultiplier = state.expanded ? variant.linkForceExpanded ?? 1 : variant.linkForceCompact ?? 1;
+    const collisionForceMultiplier = state.expanded ? variant.collisionForceExpanded ?? 1 : variant.collisionForceCompact ?? 1;
+    const chargeForceMultiplier = state.expanded ? variant.chargeForceExpanded ?? 1 : variant.chargeForceCompact ?? 1;
 
     nodes.forEach((node) => {
       const offsetX = size.centerX - node.x;
@@ -824,7 +850,7 @@
       let dy = target.y - source.y;
       let distance = Math.hypot(dx, dy) || 1;
       const desired = state.expanded ? variant.linkDistanceExpanded(link) : variant.linkDistanceCompact(link);
-      const force = ((distance - desired) / distance) * (0.007 + link.weight * 0.0045) * alpha;
+      const force = ((distance - desired) / distance) * (0.007 + link.weight * 0.0045) * linkForceMultiplier * alpha;
 
       dx *= force;
       dy *= force;
@@ -851,7 +877,7 @@
         const distance = Math.sqrt(distanceSq);
         const minDistance = a.r + b.r + collisionPadding;
         if (distance < minDistance) {
-          const push = ((minDistance - distance) / distance) * 0.08 * alpha;
+          const push = ((minDistance - distance) / distance) * 0.08 * collisionForceMultiplier * alpha;
           const pushX = dx * push;
           const pushY = dy * push;
           a.vx -= pushX;
@@ -860,7 +886,7 @@
           b.vy += pushY;
         }
 
-        const repulse = (chargeStrength * alpha) / (distanceSq + 24);
+        const repulse = ((chargeStrength * chargeForceMultiplier) * alpha) / (distanceSq + 24);
         a.vx -= dx * repulse * 0.00011;
         a.vy -= dy * repulse * 0.00011;
         b.vx += dx * repulse * 0.00011;
