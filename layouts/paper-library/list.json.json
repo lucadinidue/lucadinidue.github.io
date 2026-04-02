@@ -1,3 +1,0 @@
-{{ $data := partial "paper-library/collect.html" . }}
-{{ $data | jsonify }}
-

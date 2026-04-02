@@ -11,6 +11,9 @@ docs/
 .nvmrc
 LOCAL_DEVELOPMENT.md
 .codex
+legacy/
+themes/
+
 # Generated site output
 public/
 

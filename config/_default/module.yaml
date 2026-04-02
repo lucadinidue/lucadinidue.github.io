@@ -8,6 +8,28 @@ imports:
   - path: github.com/HugoBlox/kit/modules/integrations/netlify
   - path: github.com/HugoBlox/kit/modules/blox
   - path: github.com/HugoBlox/kit/modules/slides
+  - path: github.com/lucadinidue/shared-paper-library
+    mounts:
+      - source: content/paper-library
+        target: content/paper-library
+      - source: data/paper-library
+        target: data/paper-library
+      - source: layouts/paper-library
+        target: layouts/paper-library
+      - source: layouts/partials/paper-library
+        target: layouts/partials/paper-library
+      - source: layouts/partials/paper-library-card.html
+        target: layouts/partials/paper-library-card.html
+      - source: layouts/partials/paper-library-filters.html
+        target: layouts/partials/paper-library-filters.html
+      - source: layouts/_partials/hooks/head-end
+        target: layouts/_partials/hooks/head-end
+      - source: assets/js
+        target: assets/js
+      - source: assets/css
+        target: assets/css
+      - source: archetypes
+        target: archetypes
 
 # Install any Hugo Blox within the `hugo-blox/blox/` folder
 mounts:
