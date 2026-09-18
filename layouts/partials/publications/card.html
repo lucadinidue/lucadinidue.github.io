@@ -48,6 +48,15 @@
         <p class="m-0 text-gray-600 dark:text-gray-400 leading-relaxed">{{ delimit $authors ", " }}</p>
       {{ end }}
 
+      {{ if $item.Params.award }}
+        <div class="inline-flex w-fit items-center gap-1.5 rounded-full bg-amber-100 dark:bg-amber-500/10 border border-amber-300 dark:border-amber-500/30 px-2.5 py-1 text-xs font-semibold text-amber-800 dark:text-amber-300">
+          <span class="inline-flex w-3.5 h-3.5 shrink-0">
+            {{ partial "functions/get_icon" (dict "name" "hero/trophy" "attributes" "class=\"w-full h-full\"") }}
+          </span>
+          <span>{{ $item.Params.award }}</span>
+        </div>
+      {{ end }}
+
       {{ if or $year $venue }}
         <p class="m-0 flex flex-wrap items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
           {{ if $year }}

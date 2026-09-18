@@ -26,6 +26,10 @@ publication: "In *Proceedings of the Twelfth Italian Conference on Computational
 publication_short: In *CLiC-it 2026*
 venue_short: CLiC-it 2026
 
+# Award received for this publication (optional). Shown as a badge on the
+# publication page and its card in the listing.
+award: "Best Student Paper Award"
+
 abstract: "Neural Language Models can exhibit similar behavior while converging to different internal solutions, in terms of both learned weights and induced sentence representations. In this work, we ask whether the order of pre-training examples contributes to this divergence. Prior studies have shown that pre-training data ordering affects both learning dynamics and the properties encoded in the resulting representations, but its role in shaping the similarity between models trained on different orders remains less understood. We study this question in a controlled setting by comparing GPT-style models pre-trained with identical architecture, initialization, and corpus, varying only the sequence in which examples are presented. We measure how training order shapes model similarity across weight and representation spaces, comparing layer-wise weight matrices and the corresponding component-level activations. We also investigate whether distances in parameter space are reflected in representational distances, and examine the linguistic profile of the sentences that induce the largest representational differences. Our findings characterize training order as a source of internal model divergence, linking data sequence to parameter configurations, representational structure, and input-level linguistic properties."
 
 # # Summary. An optional shortened abstract.
@@ -46,11 +50,11 @@ featured: false
 
 # Custom links
 # Proceedings not published yet - add pdf/code links once available.
-# links:
+links:
 #   - type: pdf
 #     url: ""
-#   - type: code
-#     url: ""
+  - type: code
+    url: "https://github.com/lucadinidue/all_the_models_distances"
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # image:

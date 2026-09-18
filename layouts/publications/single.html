@@ -230,6 +230,15 @@
       {{ end }}
       {{end}}
 
+      {{ if .Params.award }}
+        <div class="my-6 max-w-prose inline-flex items-center gap-2 rounded-full bg-amber-100 dark:bg-amber-500/10 border border-amber-300 dark:border-amber-500/30 px-4 py-2 text-amber-800 dark:text-amber-300 font-semibold">
+          <span class="inline-flex w-5 h-5 shrink-0">
+            {{ partial "functions/get_icon" (dict "name" "hero/trophy" "attributes" "class=\"w-full h-full\"") }}
+          </span>
+          <span>{{ .Params.award }}</span>
+        </div>
+      {{ end }}
+
       {{ if .Params.abstract }}
         <section class="my-6 prose prose-slate lg:prose-xl dark:prose-invert max-w-none">
           <h2>{{ i18n "abstract" }}</h2>

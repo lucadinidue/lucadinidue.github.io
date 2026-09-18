@@ -155,3 +155,9 @@ awards:
     date: "2022-10"
     summary: How About Time? Probing a Multilingual Language Model for Temporal Relations” (Caselli T., Dini L., Dell’Orletta F.)
     icon: hero/trophy
+  - title: Best Student Paper Award
+    awarder: CLiC-it 2026
+    date: "2026-09"
+    url: /publications/dini-etal-2026-weights/
+    summary: '"From Weights to Representations: How Pre-Training Data Order Shapes Language Models" (Dini L., Domenichelli L., Brunato D., Dell’Orletta F.)'
+    icon: hero/trophy

@@ -4,6 +4,8 @@
 {{ $theses := index $teaching "theses" | default (slice) }}
 {{ $talks := sort (where site.RegularPages "Section" "events") "Params.event_start" "desc" }}
 {{ $otherProjects := .Params.other_projects | default (slice) }}
+{{ $authorProfile := partial "functions/get_author_profile" "me" }}
+{{ $awards := $authorProfile.awards | default (slice) }}
 
 <div class="activities-page">
   <header class="activities-page__intro">
@@ -106,6 +108,40 @@
       {{ end }}
     </div>
   </section>
+
+  {{ if gt (len $awards) 0 }}
+  <section class="activities-section" aria-labelledby="awards">
+    <div class="activities-section__header">
+      <h2 id="awards" class="activities-section__title">Awards</h2>
+    </div>
+
+    <div class="activities-stack">
+      {{ range sort $awards "date" "desc" }}
+        <article class="activities-card">
+          <div class="activities-card__body">
+            {{ with .awarder }}<div class="activities-card__eyebrow">{{ . }}</div>{{ end }}
+            <h3 class="activities-card__title">
+              {{ if .url }}
+                <a href="{{ .url | relLangURL }}" class="activities-card__link">{{ .title }}</a>
+              {{ else }}
+                {{ .title }}
+              {{ end }}
+            </h3>
+            {{ with .date }}
+              <p class="activities-card__meta">
+                {{ $parsed := try (time .) }}
+                <span>{{ if not $parsed.Err }}{{ $parsed.Value | time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") }}{{ else }}{{ . }}{{ end }}</span>
+              </p>
+            {{ end }}
+            {{ with .summary }}
+              <p class="activities-card__description">{{ . }}</p>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
 
   <section class="activities-section" aria-labelledby="other-projects">
     <div class="activities-section__header">
