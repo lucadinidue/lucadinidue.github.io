@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "hugo server --disableFastRender",
     "build": "hugo --minify && pnpm run pagefind",
-    "pagefind": "pagefind --site public"
+    "pagefind": "pagefind --site public",
+    "postinstall": "node scripts/fix-tailwind-bin.js"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.12",
