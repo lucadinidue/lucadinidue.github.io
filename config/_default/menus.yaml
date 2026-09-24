@@ -10,9 +10,9 @@ main:
   - name: Papers
     pageRef: /publications
     weight: 11
-  - name: Library
-    pageRef: /paper-library
-    weight: 12
+  # - name: Library
+  #   pageRef: /paper-library
+  #   weight: 12
   - name: Activities
     pageRef: /activities
     weight: 13
