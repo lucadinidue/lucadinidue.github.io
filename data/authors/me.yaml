@@ -153,6 +153,7 @@ awards:
   - title: Outstanding Paper Award
     awarder: COLING
     date: "2022-10"
+    url: /publications/caselli-etal-2022-time/
     summary: How About Time? Probing a Multilingual Language Model for Temporal Relations” (Caselli T., Dini L., Dell’Orletta F.)
     icon: hero/trophy
   - title: Best Student Paper Award
